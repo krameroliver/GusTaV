@@ -1,4 +1,4 @@
-from consols import getTerminalSize
+from GUSTAV.consols import getTerminalSize
 
 
 
@@ -16,13 +16,13 @@ class MENUE(object):
             for entry in options:
                 print("\t", entry, menue_points[entry])
 
-            selection = raw_input("Auswahl: ")
+            selection = input("Auswahl: ")
             if selection == '1':
-                EP()
+                print("LINK_ONE")
             elif selection == '2':
-                AllProjects.link_menue()
+                print("LINK_ALL")
             elif selection == '3':
-                copy_to_tint()
+                print("COPY")
             elif selection == '4':
                 quit()
             else:
@@ -38,9 +38,9 @@ class MENUE(object):
             for entry in options:
                 print("\t", entry, menue_points[entry])
 
-            selection = raw_input("Auswahl: ")
+            selection = input("Auswahl: ")
             if selection == '1':
-                copy_to_tint()
+                print ("COPY")
             elif selection == '2':
                 quit()
             else:
