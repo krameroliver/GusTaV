@@ -1,6 +1,7 @@
 import os,sys
 import re
 keywords = ["system","regression_job","bootstraper","checkout","start-ende","benarichtigung"]
+
 from time import sleep
 
 class Job_Import_Parser(object):
@@ -15,17 +16,31 @@ class Job_Import_Parser(object):
         }
 #das ist ein test
     def copy(answer=0,job=""):
-        if answer = 1:
+        if answer == 1:
             print("copy {job} nach jobgeneration".format(job=job))
 
     def copy_temp_jobs(self,copy=[]):
         if len(copy)<5:
             print ("error: Abfragen nicht korrekt ausgefüllt.")
         else:
-            print (copy)
+            if copy[0] == 1:
+                print ("copy regression_job > target")
+            if copy[1] == 1:
+                print ("copy bootstraper > target")
+            if copy[2] == 1:
+                print ("copy checkout > target")
+            if copy[3] == 1:
+                print ("copy start-ende > target")
+            if copy[4] == 1:
+                print ("copy benarichtigung > target")
 
-
-            quit()
+    def run_import(self,cc_system,transfer=""):
+        command_obj = "air sandbox run cc_deploy_objects_import.pst -TO_SYSTEM "+ cc_system
+        command_jobs = "air sandbox run cc_deploy_jobdefs_import.pst -TO_SYSTEM "+cc_system+" -echo_transfer "+transfer
+        command_approve = "air sandbox run jobaprover.pset  -TO_SYSTEM "+ cc_system
+        print(command_obj)
+        print(command_jobs)
+        print(command_approve)
 
     def interpret_job_def(self):
         in_file = open(r"C:\Users\okramer\Documents\Python\jobdef\job_def.ok_job","r")
@@ -68,7 +83,6 @@ class Job_Import_Parser(object):
 
             if selection_import == "1":
                 selection_system = self.print_menue(cc_sys,"In welches system sollen die Jobs importiert werden?")
-                #print(selection_system)
                 cc_system = cc_sys[int(selection_system)]
                 selection_regression_job = self.print_menue(options, "Wollen sie den regression Job ins CC importieren?")
                 selection_bootstraper = self.print_menue(options, "Wollen sie den bootstraper Jobs ins CC importieren?")
@@ -76,9 +90,16 @@ class Job_Import_Parser(object):
                 selection_start_ende = self.print_menue(options, "Wollen sie die Start und Ende Jobs ins CC importieren?")
                 selection_benarichtigung = self.print_menue(options,
                                                         "Wollen sie den benarichtigungs Job ins CC importieren?")
+                selection_echo_transfer = self.print_menue(options,"Wollen sie die Transferjobs echo'n?")
+
+
+
+
                 copy_array=[selection_regression_job,selection_bootstraper,selection_checkout,selection_start_ende,selection_benarichtigung]
                 copy_array = [int(i) for i in copy_array]
                 self.copy_temp_jobs(copy_array)
+                print("")
+                self.run_import(cc_system, selection_echo_transfer)
 
             elif selection_import == "2":
                 print("kein jobimport exit")
@@ -88,3 +109,5 @@ class Job_Import_Parser(object):
                 quit()
             else:
                 print("falsche eingabe")
+
+
