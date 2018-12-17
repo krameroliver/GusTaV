@@ -39,6 +39,7 @@ class MENUE(object):
                 print("\t", entry, menue_points[entry])
 
             selection = input("Auswahl: ")
+            print("")
             if selection == '1':
                 print ("COPY beginnt")
                 s_i_d = SyncInputData()
@@ -46,7 +47,8 @@ class MENUE(object):
 
             elif selection == "2":
                 jip=Job_Import_Parser()
-                jip.interpret()
+                #jip.interpret()
+                jip.write_job_def()
             elif selection == '3':
                 quit()
             else:
