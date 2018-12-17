@@ -13,7 +13,7 @@ class Job_Import_Parser(object):
             "start-ende":"True",
             "benarichtigung":"True"
         }
-
+#das ist ein test
     def copy(answer=0,job=""):
         if answer = 1:
             print("copy {job} nach jobgeneration".format(job=job))
