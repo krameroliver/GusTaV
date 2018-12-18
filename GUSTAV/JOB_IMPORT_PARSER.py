@@ -41,6 +41,7 @@ class Job_Import_Parser(object):
         print(command_obj)
         print(command_jobs)
         print(command_approve)
+        print("PIPI fein!")
 
     def interpret_job_def(self):
         in_file = open(r"C:\Users\okramer\Documents\Python\jobdef\job_def.ok_job","r")

@@ -1,7 +1,8 @@
 from GUSTAV.consols import getTerminalSize
 from GUSTAV.SYNC import SyncInputData
 from GUSTAV.JOB_IMPORT_PARSER import Job_Import_Parser
-
+from GUSTAV.LinkOne import link
+from GUSTAV.LinkAll import link_all
 
 class MENUE(object):
 
@@ -19,8 +20,10 @@ class MENUE(object):
             selection = input("Auswahl: ")
             if selection == '1':
                 print("LINK_ONE")
+                link()
             elif selection == '2':
                 print("LINK_ALL")
+                link_all()
             elif selection == '3':
                 print("COPY")
             elif selection == '4':

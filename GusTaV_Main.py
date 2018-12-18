@@ -1,6 +1,6 @@
 import GUSTAV.MENUE as menue
 
-host = "tint"
+host = "entw"
 
 def main():
     m = menue.MENUE()
