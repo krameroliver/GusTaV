@@ -24,15 +24,15 @@ class Job_Import_Parser(object):
             print ("error: Abfragen nicht korrekt ausgefüllt.")
         else:
             if copy[0] == 1:
-                print ("copy regression_job > target")
+                print ("copy regression_job -> target")
             if copy[1] == 1:
-                print ("copy bootstraper > target")
+                print ("copy bootstraper -> target")
             if copy[2] == 1:
-                print ("copy checkout > target")
+                print ("copy checkout -> target")
             if copy[3] == 1:
-                print ("copy start-ende > target")
+                print ("copy start-ende -> target")
             if copy[4] == 1:
-                print ("copy benarichtigung > target")
+                print ("copy benarichtigung -> target")
 
     def run_import(self,cc_system,transfer=""):
         command_obj = "air sandbox run cc_deploy_objects_import.pst -TO_SYSTEM "+ cc_system
