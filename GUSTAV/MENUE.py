@@ -11,7 +11,7 @@ class MENUE(object):
 
     def entw_menue(self):
         print("Einbinden der Testdaten")
-        menue_points = {1: "Einzelprojekt", 2: "Alle Projekte", 3: "Copy Testdata to Tint", 4: "Exit"}
+        menue_points = {1: "Einzelprojekt", 2: "Alle Projekte", 3: "Copy Testdata to Tint", 4: 'Import new Data',5:"Exit"}
         while True:
             options = menue_points.keys()
             for entry in sorted(options):
@@ -27,6 +27,8 @@ class MENUE(object):
             elif selection == '3':
                 print("COPY")
             elif selection == '4':
+                print("Import new data")
+            elif selection == '5':
                 quit()
             else:
                 print("Unknown Option Selected!")
