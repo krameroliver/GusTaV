@@ -11,7 +11,7 @@ class MENUE(object):
 
     def entw_menue(self):
         print("Einbinden der Testdaten")
-        menue_points = {1: "Einzelprojekt", 2: "Alle Projekte", 3: "Copy Testdata to Tint", 4: 'Import new Data',5:"Exit"}
+        menue_points = {1: "Einzelprojekt", 2: "Alle Projekte",  3: 'Import new Data',4:"Exit"}
         while True:
             options = menue_points.keys()
             for entry in sorted(options):
@@ -24,11 +24,11 @@ class MENUE(object):
             elif selection == '2':
                 print("LINK_ALL")
                 link_all()
+            #elif selection == '3':
+            #    print("COPY")
             elif selection == '3':
-                print("COPY")
-            elif selection == '4':
                 print("Import new data")
-            elif selection == '5':
+            elif selection == '4':
                 quit()
             else:
                 print("Unknown Option Selected!")
@@ -62,22 +62,25 @@ class MENUE(object):
 
     def initial(self):
         TARDIS = ["######################################################################",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                Das Generalisierte und standardisierte              #",
-                  "#                    Testartefakte Verwaltungstool                   #",
-                  "#                             GusTaV                                 #",
-                  "#                   version: 4,59084371199880305320...               #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "#                                                                    #",
-                  "######################################################################"]
+ "#                                                                    #",
+ "#                                                                    #",
+ "#                                                                    #",
+ "#                                                                    #",
+ "#                                                                    #",
+ "#                                                                    #",
+ "#                Das Generalisierte und standardisierte              #",
+ "#                    Testartefakte Verwaltungstool                   #",
+ "#                             GusTaV                                 #",
+ "#                            version: 1=2                            #",
+ "#       Beweis:                                                      #",
+ "#              x*x = x*x                                             #",
+ "#              x^2 - x^2 = x^2 - x^2                                 #",
+ "#              x*(x - x) = (x + x) * (x - x)                         #",
+ "#              x = (x + x)                                           #",
+ "#              fuer x = 1 folgt die Behauptung                       #",
+ "######################################################################"]
+
+
         w = getTerminalSize()[0]
         for l in TARDIS:
             print(l.center(w, " "))

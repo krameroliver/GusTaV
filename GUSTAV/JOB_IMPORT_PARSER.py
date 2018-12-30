@@ -21,7 +21,7 @@ class Job_Import_Parser(object):
 
     def copy_temp_jobs(self,copy=[]):
         if len(copy)<5:
-            print ("error: Abfragen nicht korrekt ausgefüllt.")
+            print ("error: Abfragen nicht korrekt ausgefuellt.")
         else:
             if copy[0] == 1:
                 print ("copy regression_job -> target")

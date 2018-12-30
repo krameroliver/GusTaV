@@ -2,9 +2,9 @@ import os,sys
 import re
 from time import sleep
 
-src = r"C:\Users\okramer\TestData\TestDataContainer"
-tgt = r"C:\Users\okramer\TestData\Entwicklung"
-log = r"C:\Users\okramer\TestData\link.log"
+src = r"/appdata/abinitio/data/EDW/Testdata/TestDataContainer"
+tgt = r"/appdata/abinitio/data/EDW/Testdata/ENTWICKLUNG"
+log = r"/appdata/abinitio/data/EDW/Testdata/link.log"
 
 def get_next_instance(path):
     sub_dirs = os.listdir(path=path)
@@ -23,7 +23,7 @@ def print_menue(menue={},frage=""):
 
 
 def link_all():
-    print("WARNING: Es werden nur für den SIT test zugelassene Versionen Verlinkt!")
+    print("WARNING: Es werden nur fuer den SIT test zugelassene Versionen Verlinkt!")
     print("WARNUNG: Es wird die neuste Version aller Projekte verlinkt!")
     options = {1: "ja", 2: "nein", 3: "exit"}
 
@@ -46,6 +46,7 @@ def link_all():
             print(
                 "#####################################################################################################")
             #os.link(source, target)
+            os.system("ln -s {source} {target}".format(source=source,target=target))
             print("PIPI fein!")
     elif selection == "2":
         print("GusTaV beendet sich in 5 Sekunden!")
